@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/> 
+
+<title></title>
+
+<style type="text/css">
+
+*{margin: 0;padding: 0;}
+
+.outer{
+
+width: 400px;
+
+height: 350px;
+
+/*background:red;*/
+
+margin: 10px auto;
+
+}
+
+#name{
+
+width: 200px;
+
+height: 250px;
+
+margin: 10px auto;
+
+text-align: center;
+
+line-height: 250px;
+
+font-size: 60px;
+
+color:red;
+
+}
+
+button{
+
+display: block;
+
+width: 100px;
+
+height: 50px;
+
+font-size: 25px;
+
+text-align: center;
+
+margin: 200px auto 0;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+  <div class="outer">
+
+  <div id="name"></div>
+
+  <button>开始</button>
+
+  </div>
+
+</body>
+
+<script type="text/javascript">
+
+var divs=document.getElementsByTagName('div')[1];
+
+var btn=document.getElementsByTagName("button")[0];
+
+var flag=true,timer=null;
+
+var arr=["学习","爱学习","爱学习","爱学","AJAX","C","C++","C#","PHP","Java","EL","python","BigData"];//自行更改文字
+
+btn.onclick=function(){
+
+if (flag) {
+
+timer=setInterval(function(){
+
+divs.innerHTML=ram();
+
+},20)
+
+btn.innerHTML="stop";
+
+flag=false;
+
+}else{
+
+clearInterval(timer);
+
+btn.innerHTML="start";
+
+flag=true;
+
+}
+
+}
+
+function ram(){
+
+var x=Math.floor(Math.random()*arr.length);
+
+var result=arr[x];
+
+return result;
+
+}
+
+</script>
+
+</html>
